@@ -18,11 +18,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             if isLoading {
-                ProgressView()
-                    .scaleEffect(1.5)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(.systemBackground))
-                    .ignoresSafeArea()
+                ProgressView {
+                    Text("Loading...")
+                }
+                .scaleEffect(1.5)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(.systemBackground))
+                .ignoresSafeArea()
             }
         }
     }

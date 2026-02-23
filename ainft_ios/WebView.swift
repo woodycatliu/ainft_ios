@@ -56,7 +56,7 @@ struct WebView: UIViewRepresentable {
         
         func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
             let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "確定", style: .default) { _ in
+            alert.addAction(UIAlertAction(title: String(localized: "OK"), style: .default) { _ in
                 completionHandler()
             })
             if let rootVC = getRootVC() {
@@ -83,7 +83,6 @@ struct WebView: UIViewRepresentable {
             
             // 如果不是網頁標準協議，則嘗試喚起外部 App
             if scheme != "http" && scheme != "https" && scheme != "about" && scheme != "file" {
-                print("[WebView] Detected Custom Scheme: \(scheme) - Attempting to open...")
                 
                 // 直接嘗試開啟，不使用 canOpenURL (因為可能沒在 Info.plist 宣告)
                 UIApplication.shared.open(url, options: [:]) { success in
@@ -141,12 +140,12 @@ struct WebView: UIViewRepresentable {
                         }
                     }
                 } else {
-                    let alert = UIAlertController(title: nil, message: "message", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "確定", style: .default) { _ in
+                    let alert = UIAlertController(title: nil, message: String(localized: "Please install TronLink to continue."), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: String(localized: "OK"), style: .default) { _ in
                         UIApplication.shared.open(URL(string: "https://wwww.google.com")!)
                     })
                     
-                    alert.addAction(UIAlertAction(title: "cancel", style: .default) { _ in
+                    alert.addAction(UIAlertAction(title: String(localized: "Cancel"), style: .default) { _ in
                        
                     })
                     
