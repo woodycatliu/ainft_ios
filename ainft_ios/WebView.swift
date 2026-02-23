@@ -142,7 +142,7 @@ struct WebView: UIViewRepresentable {
                 } else {
                     let alert = UIAlertController(title: nil, message: String(localized: "Please install TronLink to continue."), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: String(localized: "OK"), style: .default) { _ in
-                        UIApplication.shared.open(URL(string: "https://wwww.google.com")!)
+                        UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/tronlink-trx-btt-wallet/id1453530188")!)
                     })
                     
                     alert.addAction(UIAlertAction(title: String(localized: "Cancel"), style: .default) { _ in
