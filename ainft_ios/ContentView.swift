@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isLoading = true
-    private let targetURL = URL(string: "https://ainft.com/")!
+    private let targetURL = URL(string: "https://chat.ainft.com/chat")!
 //    private let targetURL = URL(string: "https://chat.ainft.com/chat")!
 
     var body: some View {
